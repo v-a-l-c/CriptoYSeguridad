@@ -1,0 +1,21 @@
+name: mitm-lab
+topology:
+  nodes:
+    br-mitm:
+      kind: bridge
+    atacante:
+      kind: linux
+      image: mitm-lab:latest
+      cap-add: [NET_ADMIN, NET_RAW]
+    victima:
+      kind: linux
+      image: mitm-lab:latest
+      cap-add: [NET_ADMIN, NET_RAW]
+    gateway:
+      kind: linux
+      image: mitm-lab:latest
+      cap-add: [NET_ADMIN, NET_RAW]
+  links:
+    - endpoints: ["br-mitm:eth1", "atacante:eth1"]
+    - endpoints: ["br-mitm:eth2", "victima:eth1"]
+    - endpoints: ["br-mitm:eth3", "gateway:eth1"]

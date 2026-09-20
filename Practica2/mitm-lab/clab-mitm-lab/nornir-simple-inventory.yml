@@ -1,0 +1,21 @@
+---
+br-mitm:
+    username: 
+    password: 
+    platform: bridge
+    hostname: 
+atacante:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.3
+gateway:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.2
+victima:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.4
